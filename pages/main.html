@@ -5,18 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>USHOUSE</title>
     <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.min.css">
-    <style type="text/javascript" src="../vendor/bootstrap/dist/js/bootstrap.min.js"></style>
+    <script type="text/javascript" src="../vendor/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../vendor/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../vendor/slick/slick.css">
+
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/main-mobile.css">
   </head>
   <body>
-    hihi
-  </body>
+    <div class="US-navbar">
+      <div class="US-navbar-wrapper">
+        <div class="logo">USHOUSE</div>
+        <div class="blank"></div>
+        <div class="user"><i class="fas fa-user"></i></div>
+        <div class="signin"><i class="fas fa-sign-in-alt"></i></div>
+      </div>
+    </div>
+    <div class="search-section">
+      <div class="search-section-wrapper">
+        <div class="desc">
+          나만의 집을 검색해보세요<br/>
+          어스하우스가 최고의 서비스를 제공합니다.
+        </div>
+        <div class="main-search">
+          <input type="text" name="main" value="" placeholder="지역 또는 지하철역명">
+        </div>
+        <div class="condition-search">
+          <select class="form-control" id="type">
+            <option>타입</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
 
-  <button class="button">button</button>
+          <select class="form-control" id="location">
+            <option>위치</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+
+          <select class="form-control" id="price">
+            <option>가격</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+
+          <select style="margin-right: 0" class="form-control" id="date">
+            <option>날짜</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        <div class="search-button">
+          <span>검색&nbsp;<i class="fas fa-search"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="link-section">
+      <span>서비스 바로가기</span>
+    </div>
+    <div class="around-section">
+      <div class="list">
+        <div class='list-wrapper'>
+          <div class='icon'><i class="far fa-calendar-alt"></i></div>
+          <div class='desc'>바로 이용 가능한 집</div>
+        </div>
+      </div>
+      <div class="list">
+        <div class='list-wrapper'>
+          <div class='icon'><i class="fas fa-bus"></i></div>
+          <div class='desc'>바로 이용 가능한 집</div>
+        </div>
+      </div>
+      <div class="list">
+        <div class='list-wrapper'>
+          <div class='icon'><i class="fas fa-store"></i></div>
+          <div class='desc'>바로 이용 가능한 집</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-section">
+      <div class="header">
+        <span>주변리뷰</span>
+      </div>
+      <div class="picture-wrapper">
+        <div class="prev">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <div class="picture">
+          <div class="list" style="background-image: url('../public/images/sample/img-1.png')">
+            <div class="description">
+              <span class="description-header">주변 리뷰 </span>
+              <br>
+              <span class="description-body">여유로운 시간을 보낼 수 있는 역삼동 브런치 카페</span>
+            </div>
+          </div>
+          <div class="list" style="background-image: url('../public/images/sample/img-1.png')">
+            <div class="description">
+              <span class="description-header">주변 리뷰 </span>
+              <br>
+              <span class="description-body">여유로운 시간을 보낼 수 있는 역삼동 브런치 카페</span>
+            </div>
+          </div>
+        </div>
+        <div class="next">
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
+
+    </div>
+    <div class="call-section">
+      <div class="icon"><i class="fas fa-phone"></i></div>
+      <div class="number">1544-9616</div>
+    </div>
+    <div class="footer">
+      <div class="footer-wrapper">
+        <div class="footer-logo" style="background-image:url('../public/images/logo/footer-logo.png')">
+        </div>
+        <div class="footer-description">
+          어스하우스 | 대표자: 이민호 | 개인정보보호책임자: 담당자명 | 사업자등록번호: 123-45-67890  | 통신판매업신고: 1234
+          <br>
+          서울시 성동구 독서당로 224 지하 1층 | ushouse@ushouse.co.kr
+          <br>
+          Copyright (C) 2018. All rights reserved by US HOUSE
+        </div>
+      </div>
+    </div>
+  </body>
 
   <script type="text/javascript">
     $(document).ready(function() {
-      console.log('jquery working fine');
+      $('.picture').slick({
+        autoplay: true,
+        arrows: false,
+      });
+
+      $(".picture-wrapper .prev").click( function(e) {
+        $('.picture').slick("slickPrev");
+      });
+
+      $(".picture-wrapper .next").click( function(e) {
+        $('.picture').slick("slickNext");
+      });
+
     })
   </script>
 </html>
